@@ -15,6 +15,10 @@ public class StudentService {
 		this.repository = repository;
 	}
 
+	public Student createStudent(Student student) {
+		return repository.createStudent(student);
+	}
+
 	public Student getstudent(int id) {
 		return repository.getStudentById(id);
 	}

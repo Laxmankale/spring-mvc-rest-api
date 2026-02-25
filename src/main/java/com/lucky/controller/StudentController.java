@@ -2,6 +2,8 @@ package com.lucky.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +19,11 @@ public class StudentController {
 	public StudentController(StudentService service) {
 		super();
 		this.service = service;
+	}
+
+	@PostMapping("/student")
+	public Student createStudent(@RequestBody Student student) {
+		return service.createStudent(student);
 	}
 
 	@GetMapping("/student/{id}")
