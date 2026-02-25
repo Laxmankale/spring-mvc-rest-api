@@ -23,4 +23,8 @@ public class StudentService {
 		return repository.getStudentById(id);
 	}
 
+	public Student updateStudent(int id, Student student) {
+		return repository.updateStudent(id,student);
+	}
+
 }

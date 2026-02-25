@@ -27,4 +27,16 @@ public class StudentRepository {
 		}
 		return null;
 	}
+
+	public Student updateStudent(int id, Student student) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == id) {
+				list.set(i, student);
+
+				return student;
+			}
+		}
+		return null;
+
+	}
 }
