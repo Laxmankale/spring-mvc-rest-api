@@ -1,5 +1,6 @@
 package com.lucky.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,4 +38,8 @@ public class StudentController {
 		return service.updateStudent(id, student);
 	}
 
+	@DeleteMapping("student/{id}")
+	public Student deleteStudent(@PathVariable int id) {
+		return service.deleteStudent(id);
+	}
 }

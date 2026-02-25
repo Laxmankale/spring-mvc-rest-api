@@ -27,4 +27,8 @@ public class StudentService {
 		return repository.updateStudent(id,student);
 	}
 
+	public Student deleteStudent(int id) {
+		return repository.deleteStudent(id);
+	}
+
 }
