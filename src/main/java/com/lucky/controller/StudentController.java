@@ -38,8 +38,12 @@ public class StudentController {
 	}
 
 	@GetMapping("/student/{id}")
-	public Student getStudent(@PathVariable int id) {
-		return service.getstudent(id);
+	public ResponseEntity<Object> getStudent(@PathVariable int id) {
+		Student student = service.getstudent(id);
+		if (student != null) {
+			return ResponseEntity.ok(student);
+		}
+		return ResponseEntity.notFound().build();
 	}
 
 	@PutMapping("/student/{id}")
